@@ -3,6 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { ApolloClient } from 'apollo-client';
+import { HttpLink } from 'apollo-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+
+const SPACEX_BASE_URL = 'https://';
+const httpLink = new HttpLink({
+  uri: SPACEX_BASE_URL,
+  headers: {
+    authorization: `Bearer ${process.env.REACT_APP_GITHUB_PERSONAL_ACCESS_TOKEN}`,
+  },
+});
+
+const cache = new InMemoryCache();
+
+const client = new ApolloClient({ link: httpLink, cache });
 
 ReactDOM.render(
   <React.StrictMode>
