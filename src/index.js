@@ -8,7 +8,7 @@ import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloProvider } from 'react-apollo';
 
-const SPACEX_BASE_URL = 'https://';
+const SPACEX_BASE_URL = 'https://api.spacex.land/graphql/';
 const httpLink = new HttpLink({
   uri: SPACEX_BASE_URL,
   headers: {
