@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import { ApolloClient } from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
+import { ApolloProvider } from 'react-apollo';
 
 const SPACEX_BASE_URL = 'https://';
 const httpLink = new HttpLink({
@@ -21,7 +22,9 @@ const client = new ApolloClient({ link: httpLink, cache });
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

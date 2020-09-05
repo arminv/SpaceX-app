@@ -22,7 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  background: linear-gradient(-45deg, #6355b1, #12396b, #23a6d5, #23d5ab);
+  background: linear-gradient(270deg, #57a18e, #394ead, #42749c);
   background-size: 400% 400%;
   animation: gradient 15s ease-in infinite;
 }
